@@ -1,0 +1,29 @@
+{
+  "name": "los-aguachiles",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "workspaces": [
+    "apps/web",
+    "packages/*"
+  ],
+  "overrides": {
+    "next": {
+      "postcss": "8.5.15"
+    },
+    "postcss": "8.5.15"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace @los-aguachiles/web",
+    "dev:web": "npm run dev --workspace @los-aguachiles/web",
+    "build": "npm run build --workspace @los-aguachiles/web",
+    "build:web": "npm run build --workspace @los-aguachiles/web",
+    "start": "npm run start --workspace @los-aguachiles/web",
+    "start:web": "npm run start --workspace @los-aguachiles/web"
+  },
+  "devDependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}
