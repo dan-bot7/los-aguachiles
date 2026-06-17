@@ -13,8 +13,12 @@ dist/
 .codex-logs/
 .codex-artifacts/
 .vercel/
+.railway/
 *.log
 
 coverage/
 .DS_Store
 Thumbs.db
+
+.vercel
+.railway
