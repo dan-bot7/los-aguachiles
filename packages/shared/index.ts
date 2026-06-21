@@ -29,11 +29,11 @@ export type Review = {
 export const whatsappNumber = "529841234567";
 
 export const navItems = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Menú", href: "#menu" },
-  { label: "Pick-up", href: "#pickup" },
-  { label: "Sucursales", href: "#sucursales" },
-  { label: "Contacto", href: "#contacto" }
+  { label: "Inicio", href: "/" },
+  { label: "Menú", href: "/menu" },
+  { label: "Pick-up", href: "/pickup" },
+  { label: "Sucursales", href: "/sucursales" },
+  { label: "Contacto", href: "/contacto" }
 ] as const;
 
 // Edita aquí nombres, descripciones, precios e imágenes del menú inventado.

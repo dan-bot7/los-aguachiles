@@ -3,6 +3,7 @@
 import { Clock, MapPin, MessageCircle, Minus, Phone, Plus, ShoppingBag, Trash2, UserRound } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { buildWhatsAppUrl, locations, menuItems, type MenuCategory } from "@los-aguachiles/shared";
+import { assetPath } from "../lib/assets";
 
 type CartState = Record<string, number>;
 
@@ -242,7 +243,7 @@ export function PickupOrder() {
                 return (
                   <article className="card min-w-0 overflow-hidden" key={item.id}>
                     <div className="aspect-[4/3] overflow-hidden bg-sea">
-                      <img className="h-full w-full object-cover transition duration-300 hover:scale-105" src={item.image} alt={item.imageAlt} loading="lazy" />
+                      <img className="h-full w-full object-cover transition duration-300 hover:scale-105" src={assetPath(item.image)} alt={item.imageAlt} loading="lazy" />
                     </div>
                     <div className="grid gap-4 p-5">
                       <div>

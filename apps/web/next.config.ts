@@ -5,6 +5,9 @@ const githubPagesRepo = process.env.GITHUB_PAGES_REPO ?? "los-aguachiles";
 const githubPagesBasePath = isGithubPages ? `/${githubPagesRepo}` : "";
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_BASE_PATH: githubPagesBasePath
+  },
   ...(isGithubPages
     ? {
         output: "export" as const,

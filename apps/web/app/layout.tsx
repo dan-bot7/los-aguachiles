@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Header } from "../components/Header";
 import { PwaRegistration } from "../components/PwaRegistration";
+import { SiteFooter } from "../components/SiteFooter";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,7 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
+        <Header />
         {children}
+        <SiteFooter />
         <PwaRegistration />
       </body>
     </html>

@@ -1,21 +1,26 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navItems } from "@los-aguachiles/shared";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const activePath = basePath && pathname.startsWith(basePath) ? pathname.slice(basePath.length) || "/" : pathname;
 
   return (
     <header className="fixed inset-x-0 top-0 z-30 min-h-[var(--header-height)] border-b border-slate-200/90 bg-white/90 backdrop-blur-xl">
       <div className="container-shell flex min-h-[var(--header-height)] items-center justify-between gap-5">
-        <a className="flex shrink-0 items-center gap-2.5 font-black text-navy" href="#inicio" onClick={() => setOpen(false)}>
+        <Link className="flex shrink-0 items-center gap-2.5 font-black text-navy" href="/" onClick={() => setOpen(false)}>
           <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-aguachile text-xs font-black text-white shadow-[0_8px_18px_rgba(8,119,190,0.24)]">
             LA
           </span>
           <span>Los Aguachiles</span>
-        </a>
+        </Link>
 
         <button
           className="grid size-11 place-items-center rounded-lg border border-slate-200 bg-white text-navy md:hidden"
@@ -34,24 +39,26 @@ export function Header() {
           aria-label="Navegación principal"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
-              className="rounded-lg px-3 py-3 hover:bg-sea hover:text-navy md:p-0 md:hover:bg-transparent"
+              className={`rounded-lg px-3 py-3 hover:bg-sea hover:text-navy md:p-0 md:hover:bg-transparent ${
+                activePath === item.href ? "bg-sea text-navy md:bg-transparent md:text-aguachile" : ""
+              }`}
               href={item.href}
               onClick={() => setOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a className="btn btn-primary mt-2 w-full md:hidden" href="#pickup" onClick={() => setOpen(false)}>
+          <Link className="btn btn-primary mt-2 w-full md:hidden" href="/pickup" onClick={() => setOpen(false)}>
             Ordenar pick-up
-          </a>
+          </Link>
         </nav>
 
         <div className="hidden md:block">
-          <a className="btn btn-primary" href="#pickup">
+          <Link className="btn btn-primary" href="/pickup">
             Ordenar pick-up
-          </a>
+          </Link>
         </div>
       </div>
     </header>

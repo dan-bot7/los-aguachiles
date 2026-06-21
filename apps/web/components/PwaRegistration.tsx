@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { assetPath } from "../lib/assets";
 
 export function PwaRegistration() {
   useEffect(() => {
@@ -9,7 +10,7 @@ export function PwaRegistration() {
     }
 
     const register = () => {
-      navigator.serviceWorker.register("./sw.js").catch(() => {
+      navigator.serviceWorker.register(assetPath("sw.js")).catch(() => {
         // El sitio sigue funcionando aunque el navegador no permita registrar el service worker.
       });
     };
