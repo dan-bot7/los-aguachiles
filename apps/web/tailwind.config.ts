@@ -5,18 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        aguachile: "#12A86B",
-        "aguachile-dark": "#08784D",
-        navy: "#164154",
-        sea: "#DFF7F2",
-        lime: "#C9EC4F",
-        coral: "#FF6F61",
-        shell: "#F7FBF7",
-        ink: "#102F3F"
+        aguachile: "#EE1717",
+        "aguachile-dark": "#B90F12",
+        "brand-blue": "#0877BE",
+        "brand-blue-dark": "#063F7E",
+        navy: "#092D5C",
+        sea: "#EAF7FF",
+        lime: "#0B82C9",
+        coral: "#EE1717",
+        fresh: "#12A86B",
+        shell: "#F8FBFF",
+        ink: "#102A43"
       },
       boxShadow: {
-        soft: "0 18px 42px rgba(16, 47, 63, 0.12)",
-        card: "0 12px 28px rgba(16, 47, 63, 0.09)"
+        soft: "0 18px 42px rgba(9, 45, 92, 0.14)",
+        card: "0 12px 28px rgba(9, 45, 92, 0.1)"
       }
     }
   },

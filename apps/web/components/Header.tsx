@@ -3,9 +3,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { navItems } from "@los-aguachiles/shared";
-import { WhatsAppButton } from "./WhatsAppButton";
-
-const reservationMessage = "Hola, quiero hacer una reserva en Los Aguachiles.";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -14,7 +11,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-30 min-h-[var(--header-height)] border-b border-slate-200/90 bg-white/90 backdrop-blur-xl">
       <div className="container-shell flex min-h-[var(--header-height)] items-center justify-between gap-5">
         <a className="flex shrink-0 items-center gap-2.5 font-black text-navy" href="#inicio" onClick={() => setOpen(false)}>
-          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-aguachile to-lime text-xs font-black text-navy shadow-[0_8px_18px_rgba(18,168,107,0.24)]">
+          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-aguachile text-xs font-black text-white shadow-[0_8px_18px_rgba(8,119,190,0.24)]">
             LA
           </span>
           <span>Los Aguachiles</span>
@@ -39,20 +36,22 @@ export function Header() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              className="rounded-lg px-3 py-3 hover:bg-aguachile/10 hover:text-navy md:p-0 md:hover:bg-transparent"
+              className="rounded-lg px-3 py-3 hover:bg-sea hover:text-navy md:p-0 md:hover:bg-transparent"
               href={item.href}
               onClick={() => setOpen(false)}
             >
               {item.label}
             </a>
           ))}
-          <WhatsAppButton message={reservationMessage} className="btn btn-primary mt-2 w-full md:hidden">
-            Reservar por WhatsApp
-          </WhatsAppButton>
+          <a className="btn btn-primary mt-2 w-full md:hidden" href="#pickup" onClick={() => setOpen(false)}>
+            Ordenar pick-up
+          </a>
         </nav>
 
         <div className="hidden md:block">
-          <WhatsAppButton message={reservationMessage}>Reservar por WhatsApp</WhatsAppButton>
+          <a className="btn btn-primary" href="#pickup">
+            Ordenar pick-up
+          </a>
         </div>
       </div>
     </header>
