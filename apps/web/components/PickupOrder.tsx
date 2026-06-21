@@ -316,7 +316,7 @@ export function PickupOrder() {
               </button>
             </aside>
 
-            <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-10px_30px_rgba(9,45,92,0.12)] backdrop-blur lg:hidden">
+            <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-10px_30px_rgba(6,75,120,0.12)] backdrop-blur lg:hidden">
               <button className="btn btn-primary w-full text-base" type="button" disabled={!canContinue} onClick={continueToDetails}>
                 <ShoppingBag size={18} aria-hidden="true" />
                 Continuar · {totalItems} items · {formatCurrency(subtotal)}

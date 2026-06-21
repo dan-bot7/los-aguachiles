@@ -4,7 +4,7 @@ export function DishShowcase() {
   return (
     <div className="relative grid min-h-[430px] place-items-center md:min-h-[520px]" aria-label="Platillo destacado de demostración">
       <div className="absolute inset-x-0 bottom-8 top-12 rounded-lg border border-brand-blue/15 bg-gradient-to-br from-white/80 to-sea/80 shadow-soft md:inset-x-6" />
-      <div className="relative aspect-[4/5] w-[min(78vw,410px)] overflow-hidden rounded-lg border border-white bg-white shadow-[0_28px_62px_rgba(9,45,92,0.18)]">
+      <div className="relative aspect-[4/5] w-[min(78vw,410px)] overflow-hidden rounded-lg border border-white bg-white shadow-[0_28px_62px_rgba(6,75,120,0.18)]">
         <img
           src={assetPath("menu/aguachile-verde.jpg")}
           alt="Aguachile verde especial servido con limón y tostadas"

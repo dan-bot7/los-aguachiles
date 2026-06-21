@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Maqueta demo con menú, pick-up, sucursales y WhatsApp.",
     start_url: ".",
     display: "standalone",
-    background_color: "#EAF7FF",
-    theme_color: "#092D5C",
+    background_color: "#FFF4E2",
+    theme_color: "#064B78",
     categories: ["food", "business"]
   };
 }

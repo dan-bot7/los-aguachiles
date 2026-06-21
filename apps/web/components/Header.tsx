@@ -16,7 +16,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-30 min-h-[var(--header-height)] border-b border-slate-200/90 bg-white/90 backdrop-blur-xl">
       <div className="container-shell flex min-h-[var(--header-height)] items-center justify-between gap-5">
         <Link className="flex shrink-0 items-center gap-2.5 font-black text-navy" href="/" onClick={() => setOpen(false)}>
-          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-aguachile text-xs font-black text-white shadow-[0_8px_18px_rgba(8,119,190,0.24)]">
+          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-aguachile text-xs font-black text-white shadow-[0_8px_18px_rgba(22,135,201,0.24)]">
             LA
           </span>
           <span>Los Aguachiles</span>
