@@ -2,10 +2,15 @@
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
     "builder": "RAILPACK",
-    "buildCommand": "npm run build"
+    "buildCommand": "npm run build:api:deploy"
   },
   "deploy": {
-    "startCommand": "npx next start apps/web -p ${PORT:-3000}",
+    "preDeployCommand": [
+      "npm run db:push"
+    ],
+    "startCommand": "npm run start:api",
+    "healthcheckPath": "/api/health",
+    "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }

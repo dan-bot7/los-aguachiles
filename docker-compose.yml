@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: los_aguachiles
+      POSTGRES_PASSWORD: los_aguachiles
+      POSTGRES_DB: los_aguachiles
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    env_file: ./apps/api/.env.example
+    environment:
+      DATABASE_URL: postgresql://los_aguachiles:los_aguachiles@db:5432/los_aguachiles?schema=public
+      WEB_URL: http://localhost:3000
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+
+volumes:
+  postgres_data:

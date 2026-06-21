@@ -5,6 +5,8 @@
     "node": "24.x"
   },
   "workspaces": [
+    "apps/api",
+    "apps/mobile",
     "apps/web",
     "packages/*"
   ],
@@ -15,14 +17,22 @@
     "postcss": "8.5.15"
   },
   "scripts": {
-    "dev": "npm run dev --workspace @los-aguachiles/web",
-    "dev:web": "npm run dev --workspace @los-aguachiles/web",
-    "build": "npm run build --workspace @los-aguachiles/web",
-    "build:web": "npm run build --workspace @los-aguachiles/web",
+    "dev": "npm run build:shared && concurrently \"npm run dev --workspace @los-aguachiles/api\" \"npm run dev --workspace @los-aguachiles/web\"",
+    "dev:api": "npm run build:shared && npm run dev --workspace @los-aguachiles/api",
+    "dev:web": "npm run build:shared && npm run dev --workspace @los-aguachiles/web",
+    "build": "npm run build:shared && npm run build --workspace @los-aguachiles/api && npm run build --workspace @los-aguachiles/web",
+    "build:api": "npm run build:shared && npm run build --workspace @los-aguachiles/api",
+    "build:api:deploy": "npm run build:shared && npm run generate --workspace @los-aguachiles/api && npm run build --workspace @los-aguachiles/api",
+    "build:web": "npm run build:shared && npm run build --workspace @los-aguachiles/web",
+    "build:shared": "npm run build --workspace @los-aguachiles/shared",
+    "start:api": "npm run start --workspace @los-aguachiles/api",
     "start": "npm run start --workspace @los-aguachiles/web",
-    "start:web": "npm run start --workspace @los-aguachiles/web"
+    "start:web": "npm run start --workspace @los-aguachiles/web",
+    "db:push": "npm run db:push --workspace @los-aguachiles/api",
+    "db:seed": "npm run db:seed --workspace @los-aguachiles/api"
   },
   "devDependencies": {
+    "concurrently": "^9.2.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   }

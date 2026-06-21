@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Los Aguachiles",
+    "slug": "los-aguachiles",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "losaguachiles",
+    "userInterfaceStyle": "light"
+  }
+}

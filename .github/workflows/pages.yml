@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npm run build
+        run: npm run build:web
         env:
           GITHUB_PAGES: "true"
           GITHUB_PAGES_REPO: los-aguachiles
