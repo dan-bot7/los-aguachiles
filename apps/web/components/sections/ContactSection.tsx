@@ -26,7 +26,7 @@ export function ContactSection() {
   const message = "Hola, quiero información sobre Los Aguachiles.";
 
   return (
-    <section className="section-shell bg-gradient-to-b from-shell to-white" aria-labelledby="contact-title">
+    <section className="section-shell bg-gradient-to-b from-sea via-shell to-white" aria-labelledby="contact-title">
       <div className="container-shell">
         <div className="mb-9 grid gap-5 lg:grid-cols-[0.9fr_1fr] lg:items-end">
           <div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function ConversionCta() {
   return (
-    <section className="bg-sea/70 py-12">
+    <section className="bg-gradient-to-r from-sea/90 via-shell to-sea/70 py-12">
       <div className="container-shell flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="eyebrow">Listo para convertir visitas</p>

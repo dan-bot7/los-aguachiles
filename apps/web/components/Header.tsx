@@ -13,17 +13,17 @@ export function Header() {
   const activePath = basePath && pathname.startsWith(basePath) ? pathname.slice(basePath.length) || "/" : pathname;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-30 min-h-[var(--header-height)] border-b border-slate-200/90 bg-white/90 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-30 min-h-[var(--header-height)] border-b border-coral/15 bg-shell/90 backdrop-blur-xl">
       <div className="container-shell flex min-h-[var(--header-height)] items-center justify-between gap-5">
         <Link className="flex shrink-0 items-center gap-2.5 font-black text-navy" href="/" onClick={() => setOpen(false)}>
-          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-aguachile text-xs font-black text-white shadow-[0_8px_18px_rgba(22,135,201,0.24)]">
+          <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-blue via-coral to-aguachile text-xs font-black text-white shadow-[0_8px_18px_rgba(244,123,32,0.24)]">
             LA
           </span>
           <span>Los Aguachiles</span>
         </Link>
 
         <button
-          className="grid size-11 place-items-center rounded-lg border border-slate-200 bg-white text-navy md:hidden"
+          className="grid size-11 place-items-center rounded-lg border border-coral/20 bg-white/90 text-navy md:hidden"
           type="button"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
@@ -33,7 +33,7 @@ export function Header() {
         </button>
 
         <nav
-          className={`absolute left-4 right-4 top-[var(--header-height)] grid gap-1 rounded-lg border border-slate-200 bg-white p-3 text-sm font-bold text-slate-500 shadow-soft transition md:static md:flex md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none ${
+          className={`absolute left-4 right-4 top-[var(--header-height)] grid gap-1 rounded-lg border border-coral/15 bg-shell p-3 text-sm font-bold text-slate-500 shadow-soft transition md:static md:flex md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none ${
             open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0 md:pointer-events-auto md:translate-y-0 md:opacity-100"
           }`}
           aria-label="Navegación principal"

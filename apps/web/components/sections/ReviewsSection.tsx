@@ -3,7 +3,7 @@ import { reviews } from "@los-aguachiles/shared";
 
 export function ReviewsSection() {
   return (
-    <section className="section-shell bg-white" aria-labelledby="reviews-title">
+    <section className="section-shell bg-shell" aria-labelledby="reviews-title">
       <div className="container-shell">
         <div className="mb-8 max-w-2xl">
           <p className="eyebrow">Reseñas</p>

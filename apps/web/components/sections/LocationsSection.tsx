@@ -4,7 +4,7 @@ import { lastPickupLabel } from "../../lib/format";
 
 export function LocationsSection() {
   return (
-    <section className="section-shell bg-white" aria-labelledby="locations-title">
+    <section className="section-shell bg-shell" aria-labelledby="locations-title">
       <div className="container-shell">
         <div className="mb-9 max-w-2xl">
           <p className="eyebrow">Sucursales</p>

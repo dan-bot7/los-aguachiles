@@ -201,7 +201,7 @@ export function PickupOrder() {
   }
 
   return (
-    <section className="section-shell bg-gradient-to-b from-white via-sea/40 to-white" aria-labelledby="pickup-title">
+    <section className="section-shell bg-gradient-to-b from-shell via-sea/70 to-shell" aria-labelledby="pickup-title">
       <div className="container-shell">
         <div className="mb-8 grid gap-5 lg:grid-cols-[0.9fr_1fr] lg:items-end">
           <div>
@@ -215,7 +215,7 @@ export function PickupOrder() {
           </p>
         </div>
 
-        <div className="mb-6 grid gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-card sm:grid-cols-2">
+        <div className="mb-6 grid gap-3 rounded-lg border border-coral/15 bg-white/80 p-3 shadow-card sm:grid-cols-2">
           <button
             className={`flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-black ${
               step === "items" ? "bg-brand-blue text-white" : "bg-sea text-navy"
@@ -249,7 +249,7 @@ export function PickupOrder() {
                     className={`shrink-0 rounded-full border px-4 py-2 text-sm font-extrabold transition ${
                       activeCategory === category
                         ? "border-brand-blue bg-brand-blue text-white"
-                        : "border-slate-200 bg-white text-slate-600 hover:border-brand-blue/40 hover:bg-sea"
+                        : "border-coral/20 bg-white/90 text-slate-600 hover:border-brand-blue/40 hover:bg-sea"
                     }`}
                     type="button"
                     onClick={() => setActiveCategory(category)}
@@ -316,7 +316,7 @@ export function PickupOrder() {
               </button>
             </aside>
 
-            <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-10px_30px_rgba(6,75,120,0.12)] backdrop-blur lg:hidden">
+            <div className="fixed inset-x-0 bottom-0 z-20 border-t border-coral/15 bg-shell/95 p-3 shadow-[0_-10px_30px_rgba(107,55,20,0.12)] backdrop-blur lg:hidden">
               <button className="btn btn-primary w-full text-base" type="button" disabled={!canContinue} onClick={continueToDetails}>
                 <ShoppingBag size={18} aria-hidden="true" />
                 Continuar · {totalItems} items · {formatCurrency(subtotal)}
@@ -353,7 +353,7 @@ export function PickupOrder() {
                     <UserRound size={16} aria-hidden="true" />
                     Nombre
                   </span>
-                  <input className="min-h-11 rounded-lg border border-slate-200 bg-white px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-name" value={customerName} onChange={(event) => setCustomerName(event.target.value)} placeholder="Tu nombre" required />
+                  <input className="min-h-11 rounded-lg border border-coral/20 bg-shell px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-name" value={customerName} onChange={(event) => setCustomerName(event.target.value)} placeholder="Tu nombre" required />
                 </label>
 
                 <label className="grid gap-2 text-sm font-extrabold text-navy">
@@ -361,7 +361,7 @@ export function PickupOrder() {
                     <Phone size={16} aria-hidden="true" />
                     Teléfono de contacto
                   </span>
-                  <input className="min-h-11 rounded-lg border border-slate-200 bg-white px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-phone" value={customerPhone} onChange={(event) => setCustomerPhone(event.target.value)} placeholder="984 123 4567" type="tel" required />
+                  <input className="min-h-11 rounded-lg border border-coral/20 bg-shell px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-phone" value={customerPhone} onChange={(event) => setCustomerPhone(event.target.value)} placeholder="984 123 4567" type="tel" required />
                 </label>
 
                 <label className="grid gap-2 text-sm font-extrabold text-navy">
@@ -369,7 +369,7 @@ export function PickupOrder() {
                     <MapPin size={16} aria-hidden="true" />
                     Sucursal
                   </span>
-                  <select className="min-h-11 rounded-lg border border-slate-200 bg-white px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-location" value={locationId} onChange={(event) => setLocationId(event.target.value)} required>
+                  <select className="min-h-11 rounded-lg border border-coral/20 bg-shell px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-location" value={locationId} onChange={(event) => setLocationId(event.target.value)} required>
                     {locations.map((location) => (
                       <option key={location.id} value={location.id}>
                         {location.city} · {location.hours}
@@ -383,7 +383,7 @@ export function PickupOrder() {
                     <Clock size={16} aria-hidden="true" />
                     Horario para recoger hoy
                   </span>
-                  <select className="min-h-11 rounded-lg border border-slate-200 bg-white px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-time" value={pickupTime} onChange={(event) => setPickupTime(event.target.value)} required disabled={pickupSlots.length === 0}>
+                  <select className="min-h-11 rounded-lg border border-coral/20 bg-shell px-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-time" value={pickupTime} onChange={(event) => setPickupTime(event.target.value)} required disabled={pickupSlots.length === 0}>
                     {pickupSlots.length > 0 ? (
                       pickupSlots.map((slot) => (
                         <option key={slot} value={slot}>
@@ -404,7 +404,7 @@ export function PickupOrder() {
 
                 <label className="grid gap-2 text-sm font-extrabold text-navy">
                   Comentarios del pedido
-                  <textarea className="min-h-24 rounded-lg border border-slate-200 bg-white p-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-notes" value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Ej. tostada sin cebolla, aguachile con extra limón..." />
+                  <textarea className="min-h-24 rounded-lg border border-coral/20 bg-shell p-3 font-normal outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15" data-testid="pickup-notes" value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="Ej. tostada sin cebolla, aguachile con extra limón..." />
                 </label>
               </div>
 
@@ -452,7 +452,7 @@ function OrderSummary({ cartItems, subtotal, totalItems, decrement, increment, r
       {cartItems.length > 0 ? (
         <div className="grid gap-3">
           {cartItems.map((item) => (
-            <div className="grid gap-2 rounded-lg border border-slate-200 bg-slate-50 p-3" key={item.id}>
+            <div className="grid gap-2 rounded-lg border border-coral/15 bg-sea/35 p-3" key={item.id}>
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="font-black text-navy">{item.name}</p>

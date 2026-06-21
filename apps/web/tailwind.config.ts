@@ -10,16 +10,18 @@ const config: Config = {
         "brand-blue": "#1687C9",
         "brand-blue-dark": "#064B78",
         navy: "#064B78",
-        sea: "#FFF4E2",
+        sea: "#FFE3C4",
         lime: "#FFC247",
         coral: "#F47B20",
         fresh: "#1687C9",
-        shell: "#FFF4E2",
+        shell: "#FFF7EF",
+        pearl: "#FFE3C4",
+        "pearl-deep": "#FFD0A4",
         ink: "#252525"
       },
       boxShadow: {
-        soft: "0 18px 42px rgba(6, 75, 120, 0.14)",
-        card: "0 12px 28px rgba(6, 75, 120, 0.1)"
+        soft: "0 18px 42px rgba(107, 55, 20, 0.14)",
+        card: "0 12px 28px rgba(107, 55, 20, 0.1)"
       }
     }
   },

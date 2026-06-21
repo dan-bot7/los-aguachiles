@@ -20,7 +20,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section className="section-shell bg-white" aria-labelledby="benefits-title">
+    <section className="section-shell bg-shell" aria-labelledby="benefits-title">
       <div className="container-shell">
         <div className="mb-8 max-w-2xl">
           <p className="eyebrow">Experiencia de compra</p>
